@@ -1,0 +1,7 @@
+/* Reset i bazowy styl */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: transparent;
+  color: #e0fce0;
+}
