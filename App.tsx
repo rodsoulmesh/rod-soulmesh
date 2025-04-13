@@ -51,7 +51,7 @@ export default function App() {
     <div style={{
       minHeight: '100vh',
       padding: '2rem',
-      backgroundImage: 'url("https://files.catbox.moe/z4l63e.png")',
+      backgroundImage: 'url("https://images.unsplash.com/photo-1581322333059-3ba9f20c874e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: '#e0fce0',
