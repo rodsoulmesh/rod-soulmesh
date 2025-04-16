@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rod-SoulMesh</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: url('bg-cosmos.jpg') no-repeat center center fixed;
-        background-size: cover;
-        font-family: sans-serif;
-        color: white;
-        text-align: center;
-      }
-      h1 {
-        font-size: 3rem;
-        background: linear-gradient(to right, #32cd32, #8a2be2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 1.5rem 0;
-      }
-      .container {
-        padding: 2rem;
-      }
-      .symbols {
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-        margin: 2rem 0;
-      }
-      .symbols img {
-        width: 100px;
-        height: auto;
-      }
-      .rod {
-        width: 140px;
-        margin: 1rem auto;
-        animation: pulse 2s infinite ease-in-out;
-      }
-      .btns {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      .btns button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      .btn-login {
-        background-color: #22c55e;
-        color: white;
-      }
-      .btn-register {
-        background-color: #8b5cf6;
-        color: white;
-      }
-      footer {
-        margin-top: 4rem;
-        font-size: 0.9rem;
-        color: #ccc;
-      }
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.05); opacity: 0.85; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <img src="symbol-rod.png" alt="Rod Symbol" class="rod" />
-      <h1>ROD - SOULMESH</h1>
-      <div class="symbols">
-        <img src="rune-raido.png" alt="Raido Rune" />
-        <img src="rune-othala.png" alt="Othala Rune" />
-      </div>
-      <div class="btns">
-        <button class="btn-login">Log In</button>
-        <button class="btn-register">Register</button>
-      </div>
-      <footer>© 2025 Rod-SoulMesh – Awakening through unity & nature 🌿</footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rod-SoulMesh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("bg-cosmos.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: #e0ffe0;
+      text-align: center;
+    }
+
+    .container {
+      padding-top: 5vh;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #00ff88, #8f00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 20px 0;
+    }
+
+    .rod {
+      width: 180px;
+      filter: drop-shadow(0 0 10px #ff6600)
+              drop-shadow(0 0 20px #ff4500)
+              drop-shadow(0 0 30px #ff3300);
+      transition: transform 0.4s ease;
+    }
+
+    .rod:hover {
+      transform: scale(1.05);
+    }
+
+    .runes {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 30px auto;
+      max-width: 600px;
+    }
+
+    .rune {
+      width: 120px;
+      max-width: 30vw;
+    }
+
+    .buttons {
+      margin-top: 40px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #66ff66;
+      color: #66ff66;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #66ff66;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="symbol-rod-transparent.png" alt="Rod Symbol" class="rod" />
+    <h1 class="title">Rod-SoulMesh</h1>
+
+    <div class="runes">
+      <img src="rune-raido.png" alt="Raido Rune" class="rune" />
+      <img src="rune-othala.png" alt="Othala Rune" class="rune" />
     </div>
-  </body>
+
+    <div class="buttons">
+      <button class="btn">Login</button>
+      <button class="btn">Register</button>
+    </div>
+  </div>
+</body>
 </html>
