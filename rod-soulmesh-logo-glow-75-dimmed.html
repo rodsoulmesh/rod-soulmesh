@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rod SoulMesh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('bg-cosmos.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rod-symbol {
+      animation: pulseRod 2.5s ease-in-out infinite;
+      width: 180px;
+      margin-bottom: -40px;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 60%;
+      max-width: 600px;
+      filter: drop-shadow(0 0 18px rgba(0, 255, 100, 0.75));
+      z-index: 1;
+    }
+
+    .runes-pair {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10vw;
+      z-index: 0;
+    }
+
+    .rune-glow {
+      width: 160px;
+      height: auto;
+      animation: pulseRune 3s ease-in-out infinite;
+      filter:
+        drop-shadow(0 0 25px white)
+        drop-shadow(0 0 45px white)
+        drop-shadow(0 0 65px white);
+      transition: transform 0.5s ease;
+    }
+
+    @keyframes pulseRod {
+      0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 5px #ff6600); }
+      50% { transform: scale(1.05) rotate(1deg); filter: drop-shadow(0 0 25px #ffaa33); }
+      100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 5px #ff6600); }
+    }
+
+    @keyframes pulseRune {
+      0%, 100% {
+        transform: scale(1);
+        filter:
+          drop-shadow(0 0 25px white)
+          drop-shadow(0 0 45px white)
+          drop-shadow(0 0 65px white);
+      }
+      50% {
+        transform: scale(1.1);
+        filter:
+          drop-shadow(0 0 35px white)
+          drop-shadow(0 0 65px white)
+          drop-shadow(0 0 85px white);
+      }
+    }
+
+    .auth-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .auth-buttons button {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .auth-buttons button:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  
+    .logo-glow {
+      filter:
+        drop-shadow(0 0 2.5px rgba(255, 255, 255, 0.4))
+        drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(0 0 7.5px rgba(255, 255, 255, 0.2));
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <img src="symbol-rod-enhanced.png" alt="Symbol Roda" class="rod-symbol" />
+
+    <div class="runes-pair">
+      <img src="rune-raido.png" class="rune-glow" alt="Raido" />
+      <img src="rune-othala.png" class="rune-glow" alt="Othala" />
+    </div>
+
+    <img src="Nazwa strony.png" alt="Rod SoulMesh Logo" class="logo logo-glow" />
+
+    <div class="auth-buttons">
+      <button>Zaloguj się</button>
+      <button>Zarejestruj się</button>
+    </div>
+  </div>
+</body>
+</html>
