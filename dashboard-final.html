@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Rod-SoulMesh</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('bg-cosmos.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 15px;
+      transition: all 0.4s ease;
+    }
+
+    header.hide {
+      transform: translateY(-100%);
+    }
+
+    header img.logo {
+      height: 60px;
+    }
+
+    header img.title-img {
+      height: 120px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .feed {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .post {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+    }
+
+    .post img, .post video {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .post audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .post .author {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .sidebar {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .user-suggestion {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .user-suggestion p {
+      margin: 0;
+    }
+
+    .add-post {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,255,200,0.2);
+    }
+
+    .add-post input[type="text"],
+    .add-post input[type="file"] {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .add-post button {
+      background: #00ffcc;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 800px) {
+      .sidebar {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="symbol-rod-enhanced.png" alt="Symbol Roda" class="logo" />
+    <img src="Nazwa Dashboard.png" alt="Rod – SoulMesh" class="title-img" />
+  </header>
+
+  <div class="container">
+    <main class="feed">
+      <div class="add-post">
+        <h2>Dodaj post</h2>
+        <form>
+          <input type="text" placeholder="Wpisz opis posta...">
+          <input type="file" accept="image/*,video/*,audio/*">
+          <button type="submit">Opublikuj</button>
+        </form>
+      </div>
+
+      <div class="post">
+        <div class="author">@leśny_mędrzec 🌲</div>
+        <p>Magiczny poranek wśród drzew... #las #dusza #slavicvibes</p>
+        <img src="https://source.unsplash.com/600x400/?forest,mystic" alt="Forest Vision">
+      </div>
+
+      <div class="post">
+        <div class="author">@gwiezdna_szeptunka ✨</div>
+        <p>Podróż przez sny i rzeczywistość... #świadomość #psychedelic #przebudzenie</p>
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+        <audio src="https://www.w3schools.com/html/horse.mp3" controls></audio>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="user-suggestion">
+        <p><strong>@zielony_wojownik</strong></p>
+        <p><button>Obserwuj</button></p>
+      </div>
+      <div class="user-suggestion">
+        <p><strong>@czarownica_z_lasu</strong></p>
+        <p><button>Obserwuj</button></p>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
